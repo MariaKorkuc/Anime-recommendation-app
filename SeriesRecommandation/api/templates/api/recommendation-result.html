@@ -1,0 +1,12 @@
+{% extends "api/base.html" %}
+{% block content %}
+<h1>Recommendation</h1>
+    <p>Because you like {{ reason }} you should watch</p>
+    <ul>
+    {% for anime in series %}
+            <li>
+                {{ anime }}
+            </li>
+    {% endfor %}
+    </ul>
+{% endblock content %}

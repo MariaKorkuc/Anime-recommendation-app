@@ -1,0 +1,22 @@
+{% extends "api/base.html" %}
+{% block content %}
+<h1>My anime</h1>
+    <p>You already watched:</p>
+    <ul>
+    {% for anime in my_anime %}
+            <li>
+                {{ anime }}
+                <a href="{% url 'anime-unwatch' anime %}">Unwatch</a>
+            </li>
+    {% endfor %}
+    </ul>
+    <p>Anime left to watch</p>
+    <ul>
+    {% for anime in new_anime %}
+            <li>
+                {{ anime }}
+                <a href="{% url 'anime-watch' anime %}">Watched it!</a>
+            </li>
+    {% endfor %}
+    </ul>
+{% endblock content %}

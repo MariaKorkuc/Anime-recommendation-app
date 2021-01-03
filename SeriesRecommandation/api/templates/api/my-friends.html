@@ -1,0 +1,22 @@
+{% extends "api/base.html" %}
+{% block content %}
+<h1>Connections</h1>
+    <p>My friends:</p>
+    <ul>
+    {% for friend in friends %}
+            <li>
+                {{ friend }}
+                <a href="{% url 'unfriend' friend %}">Unfriend</a>
+            </li>
+    {% endfor %}
+    </ul>
+    <p>Get friends:</p>
+    <ul>
+    {% for friend in strangers %}
+            <li>
+                {{ friend }}
+                <a href="{% url 'befriend' friend %}">Befriend!</a>
+            </li>
+    {% endfor %}
+    </ul>
+{% endblock content %}
